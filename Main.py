@@ -1,6 +1,7 @@
 import cmath as math
 import scipy.io.wavfile as wavfile
 import numpy
+
 class vector() :
     def __init__(self,dim):
         self.dim=dim
