@@ -20,12 +20,24 @@ print(Vec)
 Real=[]
 Real2=[]
 Real3=[]
+abs1=[]
+abs2=[]
+abs3=[]
 for i in Vec :
     Real.append(i.real)
+    abs1.append(abs(i.real))
 for i in Vec2 :
     Real2.append(i.real)
+    abs2.append(abs(i.real))
 for i in Vec3 :
     Real3.append(i.real)
+    abs3.append(abs(i.real))
+print("abs1")
+print(abs1)
+print("abs2")
+print(abs2)
+print("abs3")
+print(abs3)
 real=numpy.array(Real)
 real2=numpy.array(Real2)
 real3=numpy.array(Real3)
