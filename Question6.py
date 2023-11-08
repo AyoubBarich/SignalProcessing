@@ -1,3 +1,6 @@
+import cmath
+import scipy.io.wavfile as wavfile
+
 N = 4096 #cardDecoupage
 fs = 4096 #fréquence
 T = 1    #temps echantilloné
