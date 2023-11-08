@@ -1,3 +1,5 @@
+import cmath as math
+
 N = 4096 #cardDecoupage
 T = 1    #temps echantilloné
 possible_l = [400,600,1000]
