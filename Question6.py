@@ -1,24 +1,24 @@
+import numpy as np
+import scipy.io wavfile as wavfile
+
 N = 4096 #cardDecoupage
 T = 1    #temps echantilloné
 possible_l = [400,600,1000]
 
-class vector() :
-    def __init__(self,dim):
-        self.dim=dim
-        self.valcoords = [0 for i in range (dim)]
-
 def epsLN(l,n):
     return math.exp(complex(0,(2*math.pi*l*n)/self.dim))
 
-def createEpsL(l, cardDecoupage):
-    EpsL = vector(cardDecoupage)
-    for i in range(cardDecoupage):
-        EpsL.coords[i] = epsLN(l,i)
+for l in possible_l:
+    musicFileName = "test" + l + ".wav"
+    print("musicFileName is :" musicFileName)
 
-def getRealEpsL(EpsL):
-    ReEpsL = vector(EpsL.dim)
-    for i in range(EpsL.dim):
-        ReEpsL.coords[i] = EpsL.coords[i].real
+    vector_eps_l = np.array (epsLN(l,n) for n in range N)
+    vector_eps_l = vector_eps_l.real
+    wavfile.write( "RealOutPut" + musicFileName, fs, y )
+
+
+
+
 
 """
 from scipy.io.wavfile import write
