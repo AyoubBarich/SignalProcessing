@@ -1,5 +1,5 @@
 import numpy as np
-import math as math
+import cmath as cmath
 import scipy.io.wavfile as wavfile
 
 N = 4096 #cardDecoupage
@@ -8,7 +8,7 @@ T = 1    #temps echantilloné
 possible_l = [400,600,1000]
 
 def epsLN(l,n):
-    return math.exp(complex(0,(2*math.pi*l*n)/N))
+    return cmath.exp(complex(0,(2*cmath.pi*l*n)/N))
 
 print(epsLN(400, 1520))
 
