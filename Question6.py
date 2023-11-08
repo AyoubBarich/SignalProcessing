@@ -13,7 +13,7 @@ def epsLN(l,n):
 def createEpsL(l, cardDecoupage):
     EpsL = vector(cardDecoupage)
     for i in range(cardDecoupage):
-        EpsL.coords[i] = epsLN(l,i))
+        EpsL.coords[i] = epsLN(l,i)
 
 def getRealEpsL(EpsL):
     ReEpsL = vector(EpsL.dim)
