@@ -1,5 +1,6 @@
-import cmath
+import cmath as cmath
 import scipy.io.wavfile as wavfile
+import numpy.fft as npft
 
 N = 4096 #cardDecoupage
 fs = 4096 #fréquence
@@ -13,13 +14,15 @@ print(epsLN(400, 1520))
 
 for l in possible_l:
     musicFileName = "Test" + str(l) + ".wav"
-    outPutPathName = "./out/RealOutPut" + musicFileName
+    outPutRealPathName = "./out/RealOutPut" + musicFileName
+    outPutRealHatPathName = "./out/RealHatOutPut" + musicFileName
     print("musicFileName is :" + musicFileName)
 
-    # vector_eps_l = np.fromfunction(lambda i,j : epsLN(l,j), (1,N), dtype = complex)
-    # vector_eps_l = np.array([epsLN(l,n) for n in range(N)], dtype = complex)
-    vector_eps_l = np.array([epsLN(l,n) for n in range(N)], dtype = complex)
-    vector_eps_l = vector_eps_l.real
+    vector_eps_l = np.array([epsLN(l,n) for n in range(N)])
+    vector_eps_l_real = vector_eps_l.real
+
+    vector_eps_l_hat = npft.ifft(vector_eps_l)
+    vector_eps_l_hat_real = vector_eps_l.real
 
     print("vector_eps_l:")
     for elt in vector_eps_l:
